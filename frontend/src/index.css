@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text: #94a3b8;
+  --text-h: #e2e8f0;
+  --bg: #0a0e17;
+  --bg-secondary: #111827;
+  --bg-card: #0f1623;
+  --border: #1e2a3a;
+  --border-light: #2a3a4e;
+  --code-bg: #1a1f2e;
+  --accent: #00e676;
+  --accent-hover: #00ff88;
+  --accent-bg: rgba(0, 230, 118, 0.1);
+  --accent-border: rgba(0, 230, 118, 0.3);
+  --text-muted: #475569;
+  --shadow:
+    rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
+  --sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: "Orbitron", system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+
+  font: 16px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--sans);
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 40px;
+  letter-spacing: 0.04em;
+  margin: 24px 0;
+  @media (max-width: 1024px) {
+    font-size: 28px;
+    margin: 16px 0;
+  }
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 118%;
+  letter-spacing: 0.03em;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 14px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+}
+
+/* ========================
+   Command Center Utilities
+   ======================== */
+
+/* Green glow effect for cards and buttons */
+.glow-green {
+  box-shadow:
+    0 0 15px rgba(0, 230, 118, 0.12),
+    0 0 30px rgba(0, 230, 118, 0.04);
+}
+
+.glow-green-text {
+  text-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
+}
+
+.glow-red {
+  box-shadow:
+    0 0 12px rgba(239, 68, 68, 0.35),
+    0 0 24px rgba(239, 68, 68, 0.15);
+}
+
+/* Subtle border glow on hover */
+.card-hover {
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  border-color: var(--border-light);
+  box-shadow: 0 0 20px rgba(0, 230, 118, 0.08);
+}
+
+/* Status indicator pulse */
+.status-live {
+  animation: pulse-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-green {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Selection color */
+::selection {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
