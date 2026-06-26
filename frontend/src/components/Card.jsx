@@ -214,3 +214,6 @@ export default function Card({ campaign, onDeleted }) {
     </>
   );
 }
+
+
+//good code
